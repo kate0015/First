@@ -1,0 +1,36 @@
+<%= form_for(@mother1) do |f| %>
+  <% if @mother1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mother1.errors.count, "error") %> prohibited this mother1 from being saved:</h2>
+
+      <ul>
+      <% @mother1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job %>
+  </div>
+  
+   <%= f.hidden_field(:children_id, :value => @child_name) %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+ <% end %>
