@@ -1,6 +1,4 @@
 class ChildrenController < ApplicationController
-  # GET /children
-  # GET /children.json
   def index
     @children = Child.all
 
@@ -9,9 +7,6 @@ class ChildrenController < ApplicationController
       format.json { render json: @children }
     end
   end
-
-  # GET /children/1
-  # GET /children/1.json
   def show
     @child = Child.find(params[:id])
     @mother1_id = params[:mother1_id]

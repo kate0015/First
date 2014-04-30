@@ -1,11 +1,16 @@
 Mother::Application.routes.draw do
-  resources :babies
+  
 
 
   resources :children
 
 
   resources :mother1s
+
+
+  resources :bouquets
+ get "/cost", to: "bouquets#cost"
+ 
 
 
   # The priority is based upon order of creation:

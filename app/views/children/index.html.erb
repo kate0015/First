@@ -1,6 +1,7 @@
 <h1>Сhildren</h1>
 
-<table>
+<table class="table table-bordered">
+ 
   <tr>
     <th>Name</th>
     <th>Age</th>
@@ -13,15 +14,15 @@
   <tr>
     <td><%= child.name %></td>
     <td><%= child.age %></td>
-    <td><%= link_to 'Show', child %></td>
-    <td><%= link_to 'Edit', edit_child_path(child) %></td>
-    <td><%= link_to 'Destroy', child, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><i><%= link_to 'Show', child, :class=>"text-success" %></i></td>
+    <td><i><%= link_to 'Edit', edit_child_path(child) %></i></td>
+    <td><i><%= link_to 'Destroy', child, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"text-error" %></i></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Child', new_child_path %>
-<%= link_to 'Mothers ', mother1s_path %>
+<%= link_to 'New Child', new_child_path,  :class=>"btn btn-danger"%>
+<%= link_to 'Mothers ', mother1s_path,  :class=>"btn btn-danger"%>
 

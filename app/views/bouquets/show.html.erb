@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @Bouquets.name %>
+</p>
+
+
+<p>
+  <b>Number of flowers:</b>
+  <%= @Bouquets.number_of_flowers %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @Bouquets.price %>
+</p>
+
+<p>
+<b>Price for bouquet</b>
+<%= @money %>
+</p>
+
+<input id="myElement" type="button" oncklick="make_calc();" value="Review Bouquet" class="btn btn-danger"/>
+	<script>
+		$("#myElement").on("click", function(){
+			if ((<%= @money %>)>=100) {
+				alert('Nice bouquet!');
+			}
+			else {
+				alert('Bad bouquet!');
+			}
+		});
+	</script>
+
+<%= link_to 'Back',bouquets_path, :class=>"btn btn-danger"%>

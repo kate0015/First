@@ -1,6 +1,7 @@
 <h1>Mothers</h1>
 
-<table>
+<table class="table table-bordered">
+ 
   <tr>
     <th>Name</th>
     <th>Surname</th>
@@ -10,22 +11,23 @@
     <th></th>
     <th></th>
   </tr>
-
+  
 <% @mother1s.each do |mother1| %>
   <tr>
     <td><%= mother1.name %></td>
     <td><%= mother1.surname %></td>
     <td><%= mother1.age %></td>
     <td><%= mother1.job %></td>
-    <td><%= link_to 'Show', mother1 %></td>
-    <td><%= link_to 'Edit', edit_mother1_path(mother1) %></td>
-    <td><%= link_to 'Destroy', mother1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'Add child', {:controller => :children, :action => :new, :mother1_id => mother1.id} %></td>
+    <td><i><%= link_to 'Show', mother1 %></i></td>
+    <td><i><%= link_to 'Edit', edit_mother1_path(mother1) %></i></td>
+    <td><i><%= link_to 'Destroy', mother1, method: :delete, data: { confirm: 'Are you sure?' } %></i></td>
+    <td><i><%= link_to 'Add child', {:controller => :children, :action => :new, :mother1_id => mother1.id} %></i></td>
      </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mother', new_mother1_path %>
-<%= link_to 'Children', children_path %>
+
+<%= link_to 'New Mother', new_mother1_path, :class=>"btn btn-danger"%>
+<%= link_to 'Children', children_path, :class=>"btn btn-danger" %>

@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  <b>Name of child:</b>
+  <b>Names of children:</b>
   <table>
   <tr>
     <th>Name</th>
@@ -29,13 +29,15 @@
   </tr>
 
 <% @children.each do |child| %>
+  <table>
   <tr>
     <td><%= child.name %></td>
     <td><%= child.age %></td>
   </tr>
   <% end %>
 </table>
+</table>
 </p>
-<%= link_to 'Edit', edit_mother1_path(@mother1) %> |
-<%= link_to 'Back', mother1s_path %>
+<%= link_to 'Edit', edit_mother1_path(@mother1),  :class=>"btn btn-danger" %> |
+<%= link_to 'Back', mother1s_path, :class=>"btn btn-danger" %>
 

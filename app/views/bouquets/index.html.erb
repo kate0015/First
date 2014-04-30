@@ -1,0 +1,26 @@
+<h1>Bouquets</h1>
+
+<table class="table table-bordered">
+
+<tr>
+    <th>Name of the flower</th>
+    <th>Number of the flowers</th>
+    <th>price</th>
+</tr>
+  
+
+  <% @Bouquets.each do |bouquet| %>
+  
+  <tr id="<%=bouquet.id %>"</tr>
+    <td><%= bouquet.name %></td>
+    <td><%= bouquet.number_of_flowers %></td>
+    <td><%= bouquet.price %></td>
+    <td><i><%= link_to 'Show', bouquet %></i></td>
+    <td><i><%= link_to 'Edit', edit_bouquet_path(bouquet)%></i></td>
+    <td><i><%= link_to 'Destroy', bouquet, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"text-error"%></i></td>
+    <td><i><span class="costAction">The price of the bouquet</span></i></td>
+      </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New bouquet', new_bouquet_path,  :class=>"btn btn-danger" %>
